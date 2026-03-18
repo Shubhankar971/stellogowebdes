@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  background: #050816;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Container */
+.logo-container {
+  text-align: center;
+  position: relative;
+}
+
+/* Shooting Star */
+.star {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  box-shadow: 0 0 20px white, 0 0 40px cyan;
+  animation: shoot 2s linear infinite;
+}
+
+/* Star Trail */
+.trail {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, cyan, white);
+  top: -45px;
+  left: -140px;
+  transform: rotate(30deg);
+  animation: trailMove 2s linear infinite;
+}
+
+/* Text Styling */
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #00c6ff, #7b2ff7);
+  -webkit-background: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 60px;
+}
+
+.subtitle {
+  letter-spacing: 8px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(250px, 150px);
+    opacity: 0;
+  }
+}
+
+@keyframes trailMove {
+  0% {
+    transform: translate(0, 0) rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(250px, 150px) rotate(30deg);
+    opacity: 0;
+  }
+}
